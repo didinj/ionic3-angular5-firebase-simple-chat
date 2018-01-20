@@ -1,14 +1,51 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Firebase Chat
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="exitChat()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let chat of chats" no-lines>
+      <div class="chat-status" text-center *ngIf="chat.type==='join'||chat.type==='exit';else message">
+        <span class="chat-date">{{chat.sendDate | date:'short'}}</span>
+        <span class="chat-content-center">{{chat.message}}</span>
+      </div>
+      <ng-template #message>
+        <div class="chat-message" text-right *ngIf="chat.user === nickname">
+          <div class="right-bubble">
+            <span class="msg-name">Me</span>
+            <span class="msg-date">{{chat.sendDate | date:'short'}}</span>
+            <p text-wrap>{{chat.message}}</p>
+          </div>
+        </div>
+        <div class="chat-message" text-left *ngIf="chat.user !== nickname">
+          <div class="left-bubble">
+            <span class="msg-name">{{chat.user}}</span>
+            <span class="msg-date">{{chat.sendDate | date:'short'}}</span>
+            <p text-wrap>{{chat.message}}</p>
+          </div>
+        </div>
+      </ng-template>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-input type="text" placeholder="Type a message" [(ngModel)]="data.message" name="message"></ion-input>
+      </ion-col>
+      <ion-col col-2 (click)="sendMessage()">
+        <ion-icon name="paper-plane"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
