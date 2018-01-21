@@ -1,6 +1,6 @@
 # Build Ionic 3, Angular 5 and Firebase Simple Chat App
 
-This source code is part of [Build Ionic 3, Angular 5 and Firebase Simple Chat App]() tutorial.
+This source code is part of [Build Ionic 3, Angular 5 and Firebase Simple Chat App](https://www.djamware.com/post/5a629d9880aca7059c142976/build-ionic-3-angular-5-and-firebase-simple-chat-app) tutorial.
 
 To run on the device:
 
