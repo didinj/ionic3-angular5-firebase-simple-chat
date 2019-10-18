@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Content } from 'ionic-angular';
 import { RoomPage } from '../room/room';
-import * as firebase from 'Firebase';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-home',

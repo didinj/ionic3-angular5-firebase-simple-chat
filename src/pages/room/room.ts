@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddRoomPage } from '../add-room/add-room';
 import { HomePage } from '../home/home';
-import * as firebase from 'Firebase';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
